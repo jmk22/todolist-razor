@@ -11,6 +11,9 @@ namespace ToDoList
     {
       _description = taskDescription;
     }
+
+    public static List<string> ListOfTasks = new List<string> {};
+
     public string getDescription()
     {
       return _description;
@@ -18,6 +21,10 @@ namespace ToDoList
     public void setDescription(string newDescription)
     {
       _description = newDescription;
+    }
+    public void Save()
+    {
+      ListOfTasks.Add(this.getDescription());
     }
   }
 }
