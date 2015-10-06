@@ -8,7 +8,7 @@ namespace ToDoList
         public HomeModule()
         {
             Get["/"] = _ => {
-                return View["index.html"];
+                return View["index.cshtml"];
             };
             Post["/task_added"] = _ => {
               // var NewTask = new Task {
@@ -18,6 +18,10 @@ namespace ToDoList
               NewTask.Save();
               // Task.Save(NewTask.getDescription());
               return View["task_added.cshtml", NewTask];
+            };
+            Get["/view_all_tasks"] = _ => {
+              var AllTasks = Task.ListOfTasks;
+              return View["view_all_tasks.html", AllTasks];
             };
         }
     }
