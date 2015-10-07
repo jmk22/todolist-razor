@@ -21,7 +21,7 @@ namespace ToDoList
             };
             Get["/view_all_tasks"] = _ => {
               var AllTasks = Task.ListOfTasks;
-              return View["view_all_tasks.html", AllTasks];
+              return View["view_all_tasks.cshtml", AllTasks];
             };
         }
     }

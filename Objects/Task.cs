@@ -4,7 +4,6 @@ using System.Collections.Generic;
 namespace ToDoList
 {
   public class Task{
-    // public string Description {get; set;}
     private string _description;
 
     public Task(string taskDescription)
@@ -25,6 +24,10 @@ namespace ToDoList
     public void Save()
     {
       ListOfTasks.Add(this.getDescription());
+    }
+    public static void DeleteAll()
+    {
+      ListOfTasks.Clear();
     }
   }
 }
